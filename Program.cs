@@ -31,10 +31,6 @@ namespace PersonDataManagement
             }
 
             Console.WriteLine("------------------------------------------------");
-
-
-
-            //----------------------------  UC2-------------------
             Console.WriteLine(" two Person name whose age is less then 60 year ");
 
             Person person = new Person();
@@ -49,76 +45,11 @@ namespace PersonDataManagement
             }
 
             Console.WriteLine("---------------------------------------------------------------------");
-
-            // -------------------- UC3 ----------------------------
-            Console.WriteLine(" All Records between the age of 13 to 18 year ");
-            List<Person> filteredPersons1 = person.AllRecordBw13to18(personList);
-            foreach (var person1 in filteredPersons1)
-            {
-                Console.WriteLine("SSN: " + person1.SSN);
-                Console.WriteLine("Name: " + person1.Name);
-                Console.WriteLine("Address: " + person1.Address);
                 Console.WriteLine("Age: " + person1.Age);
                 Console.WriteLine();
             }
 
             Console.WriteLine("--------------------------------------------------------------");
-
-            // ------------  UC4  ----------------------
-            Console.WriteLine("Calculate Average age");
-            double averageAge = person.CalculateAverageAge(personList);
-            Console.WriteLine("Average Age: " + averageAge);
-
-            Console.WriteLine("--------------------------------------------------------------");
-
-
-            // ----------- UC5 -------------------------
-            Console.WriteLine("Checking specific name is present or not ");
-
-            Console.WriteLine("Enter a name to check:");
-            string nameToCheck = Console.ReadLine();
-
-            bool nameExists = person.CheckNameExists(personList, nameToCheck);
-
-            if (nameExists)
-                Console.WriteLine("The name exists in the list.");
-            else
-                Console.WriteLine("The name does not exist in the list.");
-
-            Console.WriteLine("--------------------------------------------------------------");
-
-
-            // ---------------- UC6 -------------------------
-            Console.WriteLine("Skip those records whose age is lesss then 60 year");
-            List<Person> skipPerson = person.SkipBelow60(personList);
-
-            foreach (var person2 in skipPerson)
-            {
-                Console.WriteLine("Name: " + person2.Name);
-                Console.WriteLine("Age: " + person2.Age);
-                Console.WriteLine();
-            }
-
-            Console.WriteLine("--------------------------------------------------------------");
-
-
-
-            // ----------- UC7 -------------------------
-            Console.WriteLine("Removing Specific record in the list by the name :");
-            Console.WriteLine("Enter the name to remove: ");
-            string nameToRemove = Console.ReadLine();
-
-            List<Person> updatedPersons = person.RemovePersonByName(personList, nameToRemove);
-
-            foreach (var person5 in updatedPersons)
-            {
-                Console.WriteLine("Name: " + person5.Name);
-                Console.WriteLine("Age: " + person5.Age);
-                Console.WriteLine();
-            }
-
-        }
-
     }
 }
     
